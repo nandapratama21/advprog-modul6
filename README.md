@@ -16,3 +16,8 @@ If the request is not for the root path, the server responds with a ```HTTP/1.1 
 
 
 ![Commit 3 screen capture](/assets/images/commit3.png)
+
+<h3>Commit 4: Simulation of slow request </h3>
+In this commit, I implemented a slow request simulation feature by using ```/sleep``` path.
+When the server receives a request for the ```/sleep path``` based on status line ```GET /sleep HTTP/1.1```, it puts the current thread to sleep for 10 seconds before responding.
+This is done using the ```thread::sleep(Duration::from_secs(10))``` function. After the sleep duration, the server responds with a HTTP/1.1 200 OK status line and serves the hello.html file.
