@@ -21,3 +21,11 @@ If the request is not for the root path, the server responds with a ```HTTP/1.1 
 In this commit, I implemented a slow request simulation feature by using ```/sleep``` path.
 When the server receives a request for the ```/sleep path``` based on status line ```GET /sleep HTTP/1.1```, it puts the current thread to sleep for 10 seconds before responding.
 This is done using the ```thread::sleep(Duration::from_secs(10))``` function. After the sleep duration, the server responds with a HTTP/1.1 200 OK status line and serves the hello.html file.
+
+<h3>Commit 5: Multithreaded server using Threadpool </h3>
+In this commit, I successfully implemented a multithreaded server using a thread pool. This is done by creating a new ```ThreadPool``` instance in the main.rs file. The ```ThreadPool``` instance is created with a size of 4 threads. 
+This allows the server to handle multiple connections concurrently, improving the overall performance and responsiveness of the server.
+
+To implement the thread pool, I created a new module called ```lib.rs```. In the ```lib.rs``` file, I created a ```worker``` that stored in a vector. To implement ```worker```, I created a new struct called ```Worker``` that contains a threads and an id.
+In order to manage each incoming request efficiently, we need to establish a queue. This queue will assign each request to an available thread from our pool for execution. To implement the queue, I created ```mpsc``` channel. The ```mpsc``` is used to communicate between the main thread and the worker threads.
+The ```Worker``` struct has a method called ```new```, which creates a new worker. The ```Worker``` struct also has a method called ```execute```, which executes the job.
