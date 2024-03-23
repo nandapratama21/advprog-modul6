@@ -8,7 +8,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0945ca0e-0554-4f09-9fb4-8cfc402c0cfe" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
@@ -110,7 +109,7 @@
       <option name="presentableId" value="Default" />
       <updated>1711173934472</updated>
       <workItem from="1711173935540" duration="2614000" />
-      <workItem from="1711176558191" duration="1393000" />
+      <workItem from="1711176558191" duration="3429000" />
     </task>
     <servers />
   </component>

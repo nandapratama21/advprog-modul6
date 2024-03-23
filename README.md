@@ -8,3 +8,11 @@ In this commit, I successfully implemented the returning function to the client.
 The content length of the response is set to the length of the contents of the ```hello.html``` file.
 
 ![Commit 2 screen capture](/assets/images/commit2.png)
+
+<h3>Commit 3: Validating request and selectively responding </h3>
+In this commit, I successfully implemented a feature to selectively respond to the client based on the request. The ```handle_connection``` function has been updated to check the request and respond accordingly.
+If the request is for the root path, the server responds with a ```HTTP/1.1 200 OK``` status line based on the ```hello.html``` file.
+If the request is not for the root path, the server responds with a ```HTTP/1.1 404 NOT FOUND``` status line based on the ```404.html``` file.
+
+
+![Commit 3 screen capture](/assets/images/commit3.png)
