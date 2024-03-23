@@ -24,7 +24,7 @@ If the request is not for the root path, the server responds with a ```HTTP/1.1 
 
 In this commit, I implemented a slow request simulation feature by using ```/sleep``` path.
 When the server receives a request for the ```/sleep path``` based on status line ```GET /sleep HTTP/1.1```, it puts the current thread to sleep for 10 seconds before responding.
-This is done using the ```thread::sleep(Duration::from_secs(10))``` function. After the sleep duration, the server responds with a HTTP/1.1 200 OK status line and serves the hello.html file.
+This is done using the ```thread::sleep(Duration::from_secs(10))``` function. After the sleep duration, the server responds with a ```HTTP/1.1 200 OK``` status line and serves the hello.html file.
 
 <h3>Commit 5: Multithreaded server using Threadpool </h3>
 
