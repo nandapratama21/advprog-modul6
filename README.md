@@ -29,3 +29,8 @@ This allows the server to handle multiple connections concurrently, improving th
 To implement the thread pool, I created a new module called ```lib.rs```. In the ```lib.rs``` file, I created a ```worker``` that stored in a vector. To implement ```worker```, I created a new struct called ```Worker``` that contains a threads and an id.
 In order to manage each incoming request efficiently, we need to establish a queue. This queue will assign each request to an available thread from our pool for execution. To implement the queue, I created ```mpsc``` channel. The ```mpsc``` is used to communicate between the main thread and the worker threads.
 The ```Worker``` struct has a method called ```new```, which creates a new worker. The ```Worker``` struct also has a method called ```execute```, which executes the job.
+
+<h3>Commit Bonus: Function improvement </h3>
+In this commit, I improved the code by refactoring the ```ThreadPool::new(size)``` to ```ThreadPool::build(size).unwrap()```. To implement this, I have modified the assertion that checks if ```size <= 0``` to an ```if``` conditional statement in ```lib.rs``` file.
+If the size is smaller or equal to 0, the function will return an error message. If the size is greater than 0, the function will return the original values of ```ThreadPool```.
+The ```.unwrap()``` method is used to check whether the build method returns an ```Err``` or not, and handles it accordingly.
